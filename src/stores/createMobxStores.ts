@@ -1,6 +1,6 @@
 import { Stores } from '../types';
-import EmailTemplateStore from '../stores/EmailTemplateStore';
-import NavigationStore from '../stores/NavigationStore';
+import EmailTemplateStore from './EmailTemplateStore';
+import NavigationStore from './NavigationStore';
 
 /**
  * Create the Mobx stores

@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import { Router } from 'react-router';
 import { Provider } from 'mobx-react';
 import { history } from './history';
-import createMobxStores from './utils/createMobxStores';
+import createMobxStores from './stores/createMobxStores';
 
 // Pages
 import EmailTemplate from './containers/EmailTemplate';
