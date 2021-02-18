@@ -1,0 +1,89 @@
+
+.email-section {
+  width: 100%;
+  height: 100vh;
+}
+
+/* Header CSS */
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+.btns {
+  position: absolute;
+  right: 0;
+  font-size: 16px;
+}
+
+.btn-add, .btn-update, .btn-preview {
+  font-size: 16px;
+}
+
+/* Template Card CSS */
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  cursor: pointer;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 10px 10px;
+  text-align: center;
+}
+
+.card-body span {
+  font-size: 20px;
+}
+
+.btn-remove {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+/* SideBar CSS */
+
+.lgMenu{
+  width: 400px;
+  height: 100%;
+  padding: 60px 40px;
+  top: 0;
+  left: -400px;
+  overflow:hidden;
+  background-color: white;
+  box-shadow: 5px 5px 10px grey;
+  position: fixed;
+  z-index: 11;
+  opacity: 0;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+}
+
+.lgMenu.enter{
+  opacity: 1;
+  left: 0;
+}
+
+.lgMenu p {
+  text-align: center;
+  font-size: 16px;
+}
