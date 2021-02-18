@@ -1,46 +1,33 @@
-# Getting Started with Create React App
+## Email Template Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Frontend**: React, Mobx, Typescript, HTML5, CSS3
 
-## Available Scripts
+**Backend**: NodeJS, ExpressJS, MySQL
 
-In the project directory, you can run:
+## Requirement
+1. Main page should have list of saved templates and button for adding new template.
+2. Each Template can be modified or removed.
+3. System using that third-party editor for editing templates.
+4. Templates saving to backend.
+5. There are few predefined tokens that can be inserted into template by your plugin for that third-party editor.
+6. Root store on front is a class with mobx.
+7. All should be written on TS.
+8. There is possibility to show parsed template when editing it (for example, click on button in editor and some models with parsed tokens opening).
 
-### `yarn start`
+## Structure
+```
+- src
+  - assets
+  - components
+  - constants
+  - containers
+  - models (defined interfaces that can be used in stores, react class components)
+  - stores (defined stores)
+  - utils
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Instructions
+```
+1. npm install
+2. npm start
+```
