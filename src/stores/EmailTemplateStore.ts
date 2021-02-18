@@ -9,6 +9,7 @@ export default class EmailTemplateStore {
 
     @observable.ref eTemplates: IEmailTemplate[] = [];
     @observable.ref selectedTemplate: IEmailTemplate = {};
+    @observable message: string = '';
 
     _navigationStore: NavigationStore;
 
@@ -59,8 +60,10 @@ export default class EmailTemplateStore {
         axios.post(`${process.env.REACT_APP_API_URL}/update`, eTemplateInfo).then((res) => {
             // eslint-disable-next-line array-callback-return
             runInAction(() => {
-                var foundIndex = this.eTemplates.findIndex(x => x.id === eTemplateInfo.id);
-                this.eTemplates[foundIndex].body = eTemplateInfo.body;
+                this.message = "Design saved successfully!";
+                setTimeout(() => {
+                    this.message = '';    
+                }, 1000);
             });
         }).catch((err) => logger.error(err));
     }
@@ -72,5 +75,9 @@ export default class EmailTemplateStore {
 
     @computed get eSelectedTemplate() {
         return this.selectedTemplate;
+    }
+
+    @computed get eMessageInfo() {
+        return this.message;
     }
 }

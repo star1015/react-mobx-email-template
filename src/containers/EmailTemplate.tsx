@@ -87,10 +87,13 @@ export default class EmailTemplate extends React.Component<IProps, IState> {
     };
 
     render() {
+        const { store } = this.props;
+        console.log(store);
         return(
             <React.Fragment>
                 <div className="email-section">
                     <div className="header">
+                        <span style={{fontSize: '14px', color: 'green'}}>{store?.eMessageInfo}</span>
                         <div className="btns">
                             <button className="btn btn-secondary btn-update" onClick={this.saveDesign}>Save Design</button>
                         </div>
