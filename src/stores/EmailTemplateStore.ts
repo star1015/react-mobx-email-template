@@ -4,7 +4,6 @@ import axios from 'axios';
 import NavigationStore from './NavigationStore';
 import { IEmailTemplate, InputData } from '../models/EmailTemplateModel';
 import logger from '../utils/logger';
-import { API_URL } from '../constants/api';
 
 export default class EmailTemplateStore {
 
@@ -19,7 +18,7 @@ export default class EmailTemplateStore {
     }
 
     @action addTemplate = async (eTemplateInfo: InputData) => {
-        axios.post(`${API_URL}/create`, eTemplateInfo).then((res) => {
+        axios.post(`${process.env.REACT_APP_API_URL}/create`, eTemplateInfo).then((res) => {
             runInAction(() => {
                 this.eTemplates = [res.data, ...this.eTemplates];
             });
@@ -29,7 +28,7 @@ export default class EmailTemplateStore {
     }
 
     @action getTemplates = (): void => {
-        axios.get(`${API_URL}/get-all`).then((res) => {
+        axios.get(`${process.env.REACT_APP_API_URL}/get-all`).then((res) => {
             runInAction(() => {
                 this.eTemplates = res.data;
             });
@@ -38,7 +37,7 @@ export default class EmailTemplateStore {
 
     @action getTemplateByID = (id?: number): void => {
         this.selectedTemplate = {};
-        axios.get(`${API_URL}/get/${id}`).then((res) => {
+        axios.get(`${process.env.REACT_APP_API_URL}/get/${id}`).then((res) => {
             runInAction(() => {
                 this.selectedTemplate = res.data[0];
             });
@@ -46,7 +45,7 @@ export default class EmailTemplateStore {
     }
 
     @action removeTemplate = (id?: number): void => {
-        axios.delete(`${API_URL}/delete/${id}`).then((res) => {
+        axios.delete(`${process.env.REACT_APP_API_URL}/delete/${id}`).then((res) => {
             if (res.status) {
                 runInAction(() => {
                     const updateTemplates = this.eTemplates.filter((item: IEmailTemplate) => item.id !== id)
@@ -57,7 +56,7 @@ export default class EmailTemplateStore {
     }
 
     @action updateTemplate = (eTemplateInfo: IEmailTemplate): void => {
-        axios.post(`${API_URL}/update`, eTemplateInfo).then((res) => {
+        axios.post(`${process.env.REACT_APP_API_URL}/update`, eTemplateInfo).then((res) => {
             // eslint-disable-next-line array-callback-return
             runInAction(() => {
                 var foundIndex = this.eTemplates.findIndex(x => x.id === eTemplateInfo.id);
